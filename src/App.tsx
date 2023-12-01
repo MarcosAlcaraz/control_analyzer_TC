@@ -4,9 +4,6 @@ import './App.css'
 import styled from 'styled-components';
 import GameController from './GameController';
 import CombinationDisplay from './CombinationDisplay';
-import GameController3D from './GameController3D';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
 
 
 const AppWrapper = styled.div`
