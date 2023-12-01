@@ -107,7 +107,7 @@ const GameController: React.FC<GameControllerProps> = ({ onButtonPress }) => {
 	return (
 		<ControllerWrapper>
 			<ControlImage src={xbox_green} alt="Controller"
-                className="animate__animated animate__fadeInUp animate__delay-.5s"
+                className="animate__animated animate__backInDown animate__delay-.1s"
             />
 
 			<Button className='animate__animated animate__bounceIn animate__delay-1s' position={{ top: '11.9%', left: '64.7%' }} onClick={() => handleButtonPress('Y')}>
