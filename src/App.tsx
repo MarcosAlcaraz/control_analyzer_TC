@@ -1,84 +1,68 @@
-import React, { useState } from 'react'
+// App.tsx
+import React, { useState, useEffect } from 'react'
 import './App.css'
-
-import styled from 'styled-components';
-import GameController from './GameController';
-import CombinationDisplay from './CombinationDisplay';
-
-
-const AppWrapper = styled.div`
-    display: flex;
-    height: 100vh;
-    position: relative;
-`;
-
-const LeftPanel = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`;
-
-const RightPanel = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`;
-
-const Divider = styled.div`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background-color: #ccc;
-    transform: translateX(-50%);
-`;
-
-const ResetButton = styled.button`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-`;
-
+import GameController from './components/GameController';
+import CombinationDisplay from './components/CombinationDisplay';
+import {
+    AppWrapper,
+    LeftPanel,
+    RightPanel,
+    Divider,
+    ResetButton,
+} from './styles';
+import { sheets, skills } from './data';
 
 const App: React.FC = () => {
 
     const [combination, setCombination] = useState<string[]>([]);
+    const [currentState, setCurrentState] = useState<string>(''); // Estado actual del autómata
 
-    // const handleReset = () => {
-    //     setCombination([]);
-    // };
+    useEffect(() => {
+        handleCombinationChange();
+    }, [combination]);
+    
+    const handleCombinationChange = () => {
+        const timeout = setTimeout(() => {
+            validateCombination();
+        }, 1500);
 
+        return () => clearTimeout(timeout);
+    };
+    
+    const validateCombination = () => {
+        const allCombinations = [...sheets, ...skills];
+
+        for (const item of allCombinations) {
+            const isValidCombination = validateItemCombination(item.combination);
+            if (isValidCombination) {
+                setCurrentState(item.name);
+                return;
+            }
+        }
+
+        setCurrentState('');
+    };
+    
+    const validateItemCombination = (itemCombination: string[]) => {
+        return (
+            itemCombination.length === combination.length &&
+            itemCombination.every((value, index) => value === combination[index])
+        );
+    };
+    
     const handleReset = () => {
         setCombination([]);
+        setCurrentState('');
     };
 
     return (
         <AppWrapper>
             <LeftPanel>
                 <GameController onButtonPress={(button) => setCombination([...combination, button])} />
-                {/* <Canvas>
-                    <ambientLight />
-                    <pointLight position={[10, 10, 10]} />
-                    <GameController3D onButtonPress={(button) => setCombination([...combination, button])} />
-                    <OrbitControls />
-                </Canvas> */}
             </LeftPanel>
             <Divider />
             <RightPanel>
-                <CombinationDisplay combination={combination} />
+                <CombinationDisplay combination={combination} currentState={currentState} />
             </RightPanel>
             <ResetButton onClick={handleReset}>Reset</ResetButton>
         </AppWrapper>
