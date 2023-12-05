@@ -28,10 +28,22 @@ const CombinationDisplay: React.FC<CombinationDisplayProps> = ({ combination, cu
     
     return (
       <DisplayWrapper>
+
+          <span style={{
+              fontSize: '1em',
+              fontWeight: 'bold',
+              color: 'white',
+              textShadow: '0 0',
+              float: 'right',
+              position: 'absolute',
+              top: '20px',
+              
+          }}>
+              Puedes revisar las combinaciones <a href="https://fan-spot-ab0.notion.site/Proyecto-TC-bb1284375f6549babce439dd90a6365a" target="_blank" rel="noreferrer">aquí</a>.
+          </span>
+
           <h1>Estado actual:</h1>
           <div>{currentState}</div>
-
-          {/* <hr style="border:15px;"><hr style="border:2px;"> */}
 
           <hr 
               style={{
