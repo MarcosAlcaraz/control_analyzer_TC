@@ -1,35 +1,43 @@
 export const sheets = [
     {
       name: 'Dinero y vida',
-      combination: ['RB', 'LB', 'A', 'DL', 'DD', 'DR', 'DU', 'DD', 'DR', 'DU'],
+      combination: ['RB', 'LB', 'A', 'DL', 'DD', 'DR', 'DU', 'DD', 'DR', 'DU'], // OK
     },
     {
-      name: 'Tranque',
-      combination: ['B', 'B', 'LB', 'B', 'B', 'B', 'LB', 'RB', 'Y', 'B', 'Y'],
+      name: 'Tanque',
+      combination: ['B', 'B', 'LB', 'DD', 'DR', 'DU', 'DD', 'DR', 'DU'], // OK
     },
     {
       name: 'Jetpack',
-      combination: ['DL', 'DR', 'LB', 'RB', 'DU', 'DD', 'DL', 'DR'],
+      combination: ['DL', 'DR', 'RB', 'LB', 'A', 'DL', 'DR'], // OK
     },
     {
       name: 'Vida ilimitada',
-      combination: ['LB', 'RB', 'DU', 'DR', 'DD', 'DL', 'B', 'A', 'X', 'Y'],
+      combination: ['DL', 'DR', 'RB', 'LB', 'A', 'DL', 'DU'], // OK
     },
     {
       name: 'Pack de Armas 1',
-      combination: ['RB', 'LB', 'DL', 'DD', 'DR', 'DU', 'DL', 'DD', 'DR', 'DU'],
+      combination: ['LB', 'RB', 'DU', 'DR', 'B', 'A', 'X', 'Y'], // OK
     },
     {
       name: 'Más respeto',
-      combination: ['RB', 'LB', 'A', 'DL', 'DR', 'DD', 'DU'],
+      combination: ['RB', 'LB', 'RB', 'LB', 'A', 'DL', 'DL', 'DR', 'DD', 'DU'], // OK
     },
     {
       name: 'Limusina',
-      combination: ['DU', 'DL', 'DL', 'RB', 'LB', 'B', 'DR'],
+      combination: ['RB', 'LB', 'RB', 'LB', 'A', 'DL', 'DU'], // OK
     },
     {
       name: 'Barcos voladores',
-      combination: ['B', 'DU', 'LB', 'DR', 'RB', 'DR', 'DU', 'X', 'Y'],
+      combination: ['RB', 'LB', 'A', 'DL', 'DR', 'DD', 'DU'], // OK
+    },
+    {
+      name: 'Hydra',
+      combination: ['B', 'A', 'X', 'LB', 'RB', 'DU', 'DR', 'DD', 'DU'], // OK
+    },
+    {
+      name: 'Coches Voladores',
+      combination: ['LB', 'RB', 'DU', 'DR', 'DD', 'DU'], // OK
     }
   ];
   
@@ -37,38 +45,38 @@ export const sheets = [
 export const skills = [
     {
       name: 'Doble Salto',
-      combination: ['X', 'X'],
+      combination: ['X', 'X'], // OK
     },
     {
       name: 'Doble Salto y Pisotón',
-      combination: ['X', 'X', 'B'],
+      combination: ['X', 'X', 'B'],  // OK
     },
     {
-      name: 'Rayo de Energía: ',
-      combination: ['LB', 'X', 'Y', 'B'],
+      name: 'Rayo de Energía',
+      combination: ['LB', 'X', 'Y', 'B'], // OK
     },
     {
-      name: 'Rayo de Energía Fusionado con el compañero de al lado',
-      combination: ['LB', 'X', 'Y', 'B', 'LB', 'DD', 'DL', 'X', 'Y', 'B'],
+      name: 'Salto y patada en el cielo',
+      combination: ['LB', 'X', 'Y', 'B', 'LB', 'Y'], // OK
     },
     {
-      name: 'Derrapar',
-      combination: ['RB', 'A', 'RB'],
+      name: 'Poder recargado',
+      combination: ['RB', 'A', 'RS'], // OK
     },
     {
-      name: 'Super derrape (con cohetes y Escudo)',
+      name: 'Rayo de Energía Fusionado con el compañero de al lado', // OK
       combination: ['LB', 'RB', 'A', 'RB', 'DL'],
     },
     {
+      name: 'Derrapar',
+      combination: ['RS', 'LS', 'B', 'B', 'B'], // OK
+    },
+    {
+      name: 'Super derrape (con cohetes y Escudo)',
+      combination: ['RS', 'LS', 'B', 'B', 'B', 'RS'], //OK
+    },
+    {
       name: 'Mil Golpes',
-      combination: ['RS', 'LS', 'B', 'B', 'B'],
-    },
-    {
-      name: 'Golpear y patear en el aire',
-      combination: ['X', 'X', 'B', 'RS', 'LS', 'B', 'B', 'B'],
-    },
-    {
-      name: 'Golpear y Super Golpe en el aire',
-      combination: ['X', 'X', 'B', 'RS', 'LS', 'B', 'B', 'B', 'LB', 'DD'],
-    },
+      combination: ['LB', 'X', 'Y', 'B', 'RS', 'LS', 'B', 'B', 'B', 'RS'], // OK
+    }
   ];
